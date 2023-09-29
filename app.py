@@ -21,3 +21,7 @@ data_load_state.text("Done! (using st.cache_data)")
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
+
+st.subheader('On-base Percentage to Wins')
+obp_wins = data[['obp', 'w']]
+st.scatter_chart(obp_wins, x='obp', y='w')

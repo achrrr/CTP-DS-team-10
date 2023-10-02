@@ -9,7 +9,7 @@ DATE_COLUMN = 'date/time'
 DATA_URL = ('data/baseball.csv')
 
 @st.cache_data
-def load_data(nrows):
+def load_data(nrows) -> pd.DataFrame:
     data = pd.read_csv(DATA_URL, nrows=nrows)
     lowercase = lambda x: str(x).lower()
     data.rename(lowercase, axis='columns', inplace=True)
@@ -19,7 +19,6 @@ def load_data(nrows):
 data_load_state = st.text('Loading data...')
 data = load_data(10000)
 data_load_state.text("Done! (using st.cache_data)")
-
 if st.checkbox('Show raw data'):
     st.subheader('Raw data')
     st.write(data)
@@ -59,4 +58,15 @@ st.markdown(
     giving investors a sense of how much money to invest in order to keep their franchise
     successful.
     '''
+)
+
+st.subheader('Number of Runs Scored in relation to wins')
+st.scatter_chart(data=data, x='rs', y='w', color='team', use_container_width=True)
+st.markdown(
+    '''
+    In this chart we show the correlation between the number of Runs Scored ("RS") for a given
+    team, and how this attribute affects the amount of wins for that team. In the chart
+    there is clear relation of higher runs scoring teams having more wins than that of 
+    lower runs scoring teams.
+   '''
 )

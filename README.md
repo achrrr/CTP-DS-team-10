@@ -14,4 +14,5 @@ CTP Week 5 Homework: Building Dashboards in Python
 
 Angel Avila
 
-## [Design Doc](https://docs.google.com/document/d/1HkzVEN2ld30eZ2_Iq5QjG-QZRUEchPjaxJEfO6iqFCQ/edit)
+## Design Doc
+[link](https://docs.google.com/document/d/1JWvZTWtraHN1r6KJ-rHA0k7-aGTNkHmJBBbvHikvEBA/edit)

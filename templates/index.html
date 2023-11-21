@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>News Classifier</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1>News Classifier</h1>
+  <h3>Input any news headline below to check if it is real or fake</h3>
+  <form action="/classify" method="POST">
+    <input type="text" name="content" id="content" placeholder="Type your news headline...">
+    <button type="submit">Classify</button>
+  </form>
+  {% if classification %}
+  <h3 class="classification-message">Classification: {{ classification }}</h3>
+  {% endif %}
+</div>
+{% endblock %}
